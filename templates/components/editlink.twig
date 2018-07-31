@@ -1,0 +1,22 @@
+{#
+--------------------------------------------------------------------------------
+Renders an edit link.
+
+Options:
+    class
+    link
+    label
+--------------------------------------------------------------------------------
+#}
+{% spaceless %}
+    {% if label is not defined %}
+        {% set label = 'Edit' %}
+    {% endif %}
+    {% if class is not defined %}
+        {% set class = '' %}
+    {% endif %}
+
+    {% if link is defined and link %}
+        <a class="{{ class }}" href="{{ link }}">{{ label }}</a>
+    {% endif %}
+{% endspaceless %}

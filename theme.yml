@@ -1,0 +1,42 @@
+# Variables that are in this file, can be used in your twig template like {{ theme.foo }}
+
+# Setting `template_directory` will add an additional forward slash at the
+# beginning to paths.
+# See: https://github.com/bolt/bolt/issues/7136
+# See: https://docs.bolt.cm/3.5/templating/building-templates#filesystem-layout
+template_directory: templates
+
+# Give templates a name.
+templateselect:
+    templates:
+        -
+          name: Homepage
+          filename: '/index.twig'
+        # -
+        #   name: Not Found
+        #   filename: '/not-found.twig'
+
+
+# Template filenames. If you're creating a theme for distribution, you can specify
+# the filenames of the templates here. The templates you will set in this config
+# file will override the ones in the global app/config/config.yml, so beware!
+# maintenance_template: maintenance_default.twig
+# homepage_template: index.twig
+# record_template: record.twig
+# listing_template: listing.twig
+# search_results_template: search.twig
+# notfound: not-found.twig
+
+# Optional overrides. These override the ones in config.yml, but can be set in
+# either place.
+# taxonomy_sort: DESC
+# homepage: page/1
+# listing_sort: datepublish DESC
+# listing_records: 6
+# search_results_records: 10
+
+# thumbnails:
+#     aliases:
+#         myimageformat:
+#             size: [400,300]
+#             cropping: crop

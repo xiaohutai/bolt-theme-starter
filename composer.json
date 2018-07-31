@@ -1,0 +1,24 @@
+{
+    "name": "xiaohutai/bolt-theme-starter",
+    "description": "Starter Theme for Bolt",
+    "type": "bolt-theme",
+    "keywords": ["theme", "bolt", "starter", "xiaohutai"],
+    "require": {
+        "bolt/bolt": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xiao-Hu Tai",
+            "email": "xiao@twokings.nl"
+        }
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "preview-1.png",
+            "preview-2.png",
+            "preview-3.png",
+            "preview-4.png"
+        ]
+    }
+}
