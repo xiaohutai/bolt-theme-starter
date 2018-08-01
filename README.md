@@ -2,59 +2,26 @@
 
 A simple theme with re-usable components.
 
+Install this theme via Bolt, or `git clone` this repository into your Bolt's
+`themes` folder.
 
 ## Getting Started
 
-[Optional] Install the following recommended extensions:
-
-- `bobdenotter/seo`
-- `bolt/boltforms`
-- `twokings/hierarchical-routes`
-- `twokings/searchable-content`
-- `bolt/labels`
-- ...
-
-
-[Optional] Install the following extensions if multilingual website:
-
-- `animal/translate`
-
-### Content Types
-
-[Optional]
-
-
-### Blocks
-
-[Optional]
-
-
-## CLI
-
-### Install Dependencies
-
 ```sh
+# Install dependencies
 npm install
-```
 
-### Development
-
-```sh
+# For development: Serve the website with hot reload for css and js files.
 npm start
-```
 
-### Build
-
-```sh
+# For production: Build and minify all assets.
 npm run build
 ```
-
-### Other
 
 | Command                | Description                              | Minification? |
 |------------------------|------------------------------------------|---------------|
 | `npm run sass`         | Compile SASS to CSS                      | ❌           |
-| `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ❌           |
+| `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ✅           |
 | `npm run styles`       | Build styles (`sass` + `postcss`)        | ✅           |
 | `npm run scripts`      | Compile JS                               | ❌           |
 | `npm run build`        | Build everything (`styles` + `scripts`)  | ✅           |
@@ -91,7 +58,43 @@ npm run build
 └── ...
 ```
 
-## Credits
 
-- foo
-- bar
+## Recommendations, Tips and Tricks
+
+
+### Extensions
+
+`[Optional]` Install the following recommended extensions:
+
+- `animal/translate`
+- `bobdenotter/seo`
+- `bacboslab/menueditor`
+- `bolt/boltforms`
+- `bolt/labels`
+- `twokings/hierarchical-routes`
+- `twokings/searchable-content`
+
+
+### Configuration
+
+`[Optional]`
+
+- `config.yml`
+- `contenttypes.yml`
+    - singletons
+- `routing.yml`
+
+
+### Blocks
+
+TODO
+
+
+### Snippets
+
+TODO
+
+
+### Components
+
+TODO
