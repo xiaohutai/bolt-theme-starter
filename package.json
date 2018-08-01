@@ -5,16 +5,12 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-
     "sass": "node-sass source/styles/main.scss --output dist/styles",
     "postcss": "postcss --replace dist/styles/* --verbose",
     "styles": "run-s sass postcss",
-
-    "scripts": "TODO",
-
+    "scripts": "babel source/scripts --out-dir dist/scripts",
     "browser-sync": "browser-sync start --files ./dist",
     "serve": "run-p 'sass -- --watch' browser-sync",
-
     "build": "run-s styles scripts"
   },
   "repository": {
@@ -34,6 +30,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
     "cssnano": "^4.0.5",
     "node-sass": "^4.9.2",
