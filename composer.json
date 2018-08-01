@@ -2,7 +2,12 @@
     "name": "xiaohutai/bolt-theme-starter",
     "description": "Starter Theme for Bolt",
     "type": "bolt-theme",
-    "keywords": ["theme", "bolt", "starter", "xiaohutai"],
+    "keywords": [
+        "bolt",
+        "starter",
+        "theme",
+        "xiaohutai"
+    ],
     "require": {
         "bolt/bolt": "^3.5"
     },
@@ -19,6 +24,7 @@
             "preview-2.png",
             "preview-3.png",
             "preview-4.png"
-        ]
+        ],
+        "bolt-icon": "icon.png"
     }
 }
