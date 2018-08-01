@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "sass": "node-sass source/styles/main.scss --output dist/styles",
-    "postcss": "postcss --replace dist/styles/* --verbose",
+    "sass": "node-sass ./source/styles/main.scss --output ./dist/styles/",
+    "postcss": "postcss --replace ./dist/styles/* --verbose",
     "styles": "run-s sass postcss",
-    "scripts": "babel source/scripts --out-dir dist/scripts",
+    "scripts": "babel ./source/scripts --out-dir ./dist/scripts",
     "browser-sync": "browser-sync start --files ./dist",
     "serve": "run-p 'sass -- --watch' 'scripts -- --watch' browser-sync",
     "build": "run-p styles 'scripts -- --presets minify'"
