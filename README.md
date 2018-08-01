@@ -67,8 +67,9 @@ npm run build
 `[Optional]` Install the following recommended extensions:
 
 - `animal/translate`
-- `bobdenotter/seo`
 - `bacboslab/menueditor`
+- `bobdenotter/seo`
+- `bolt/basewidget`
 - `bolt/boltforms`
 - `bolt/labels`
 - `twokings/hierarchical-routes`
