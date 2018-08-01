@@ -58,12 +58,8 @@ npm run prod
 
 ```
 .
-├── assets
-│   ├── images
-│   ├── icons
-│   ├── scripts
-│   ├── styles
-│   └── html
+├── dist
+│   └── ...
 ├── config
 │   └── ...
 ├── source
@@ -81,10 +77,27 @@ npm run prod
 ├── .postcssrc.js
 ├── package.json
 ├── package-lock.json
-└── README.md
+├── README.md
+└── ...
 ```
 
 ## Credits
 
 - foo
 - bar
+
+## Notes
+
+For a Bolt theme, use:
+
+```
+parcel build source/index.js
+```
+
+For a web app, use:
+
+```
+parcel build source/index.html --public-url ./ --detailed-report
+```
+
+This will automatically add hashes to included assets which is not needed for a Bolt theme.
