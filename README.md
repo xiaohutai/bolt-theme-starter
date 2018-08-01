@@ -29,42 +29,52 @@ A simple theme with re-usable components.
 [Optional]
 
 
-## Development
+## CLI
 
-Install dependencies
-```
+### Install Dependencies
+
+```sh
 npm install
 ```
 
-Serve with hot reload at localhost
-```
+### Development
+
+```sh
 npm start
 ```
-or
-```
-npm run dev
-```
 
-Build for production
-```
+### Build
+
+```sh
 npm run build
 ```
-or
-```
-npm run prod
-```
+
+### Other
+
+| Command                | Description                              | Minification? |
+|------------------------|------------------------------------------|---------------|
+| `npm run sass`         | Compile SASS to CSS                      | ❌           |
+| `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ❌           |
+| `npm run styles`       | Build styles (`sass` + `postcss`)        | ✅           |
+| `npm run scripts`      | Compile JS                               | ❌           |
+| `npm run build`        | Build everything (`styles` + `scripts`)  | ✅           |
+
 
 ## Folder Structure
 
 ```
 .
 ├── dist
+│   ├── scripts
+│   ├── styles
 │   └── ...
 ├── config
+│   ├── contenttypes.yml
 │   └── ...
 ├── source
 │   ├── scripts
-│   └── styles
+│   ├── styles
+│   └── ...
 ├── templates
 │   ├── components
 │   ├── layouts
@@ -85,20 +95,3 @@ npm run prod
 
 - foo
 - bar
-
-## Notes
-
-For a Bolt theme, use:
-
-```
-parcel build source/index.js
-```
-This sucks, because I want hot reload when developing... but for production I don't want hashed filenames.
-
-For a web app, use:
-
-```
-parcel build source/index.html --public-url ./ --detailed-report
-```
-
-This will automatically add hashes to included assets which is not needed for a Bolt theme.
