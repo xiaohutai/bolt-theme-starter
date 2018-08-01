@@ -38,6 +38,10 @@ npm install
 
 Serve with hot reload at localhost
 ```
+npm start
+```
+or
+```
 npm run dev
 ```
 
@@ -45,7 +49,10 @@ Build for production
 ```
 npm run build
 ```
-
+or
+```
+npm run prod
+```
 
 ## Folder Structure
 
