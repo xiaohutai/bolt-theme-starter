@@ -93,6 +93,7 @@ For a Bolt theme, use:
 ```
 parcel build source/index.js
 ```
+This sucks, because I want hot reload when developing... but for production I don't want hashed filenames.
 
 For a web app, use:
 

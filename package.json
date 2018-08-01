@@ -4,11 +4,11 @@
   "description": "A simple theme with re-usable components.",
   "main": "source/scripts/index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel source/index.js",
-    "dev": "./node_modules/.bin/parcel source/index.js",
-    "prod": "./node_modules/.bin/parcel build index.js",
-    "build": "./node_modules/.bin/parcel build index.js",
-    "build-report": "./node_modules/.bin/parcel build index.js --detailed-report"
+    "start": "./node_modules/.bin/parcel source/index.html",
+    "dev": "./node_modules/.bin/parcel source/index.html",
+    "prod": "./node_modules/.bin/parcel build source/index.html --public-url ./",
+    "build": "./node_modules/.bin/parcel build source/index.html --public-url ./",
+    "build-report": "./node_modules/.bin/parcel build source/index.html --public-url ./ --detailed-report"
   },
   "repository": {
     "type": "git",
