@@ -1,6 +1,6 @@
 /**
  * File:        _typography.scss
- * Description: _typography.scss for makeitso 
+ * Description: _typography.scss for makeitso
  * Author:      Sebastiaan Bonardt - @_sebbon
  */
 
@@ -9,31 +9,31 @@
  * font-weights and styles throughout your styles!
  */
 
-// @font-face { 
-//     font-family: "yourFont"; 
-//     src: url("../path/yourFont.eot"); 
+// @font-face {
+//     font-family: "yourFont";
+//     src: url("../path/yourFont.eot");
 //     src: url("../path/yourFont.eot?#iefix") format("embedded-opentype"),
 //     url("../path/yourFont.woff") format("woff"),
-//     url("../path/yourFont.svg#yourFont") format("svg"); 
-//     font-weight: normal; 
+//     url("../path/yourFont.svg#yourFont") format("svg");
+//     font-weight: normal;
 //     font-style: normal;
-// } 
-// @font-face { 
-//     font-family: "yourFontBold"; 
-//     src: url("../path/yourFontBold.eot"); 
+// }
+// @font-face {
+//     font-family: "yourFontBold";
+//     src: url("../path/yourFontBold.eot");
 //     src: url("../path/yourFontBold.eot?#iefix") format("embedded-opentype"),
 //     url("../path/yourFontBold.woff") format("woff"),
-//     url("../path/yourFontBold.svg#yourFont") format("svg"); 
-//     font-weight: bold; 
+//     url("../path/yourFontBold.svg#yourFont") format("svg");
+//     font-weight: bold;
 //     font-style: normal;
-// } 
-// @font-face { 
-//     font-family: "yourFontItalic"; 
-//     src: url("../path/yourFontItalic.eot"); 
+// }
+// @font-face {
+//     font-family: "yourFontItalic";
+//     src: url("../path/yourFontItalic.eot");
 //     src: url("../path/yourFontItalic.eot?#iefix") format("embedded-opentype"),
 //     url("../path/yourFontItalic.woff") format("woff"),
-//     url("../path/yourFontItalic.svg#yourFont") format("svg"); 
-//     font-weight: normal; 
+//     url("../path/yourFontItalic.svg#yourFont") format("svg");
+//     font-weight: normal;
 //     font-style: italic;
 // }
 
@@ -211,7 +211,7 @@ table {
 button, .btn {
     background-color: $grey;
     border:0;
-    color:$white; 
+    color:$white;
     float: left;
     display: block;
     padding: 0.625em 0.8125em 0.375em;
@@ -219,7 +219,7 @@ button, .btn {
     margin-bottom: 1.5rem;
     &:link, &:visited {
         text-decoration:none;
-        color:$white; 
+        color:$white;
     }
     &:hover, &:active, &:focus {
         background-color: $darkGrey;

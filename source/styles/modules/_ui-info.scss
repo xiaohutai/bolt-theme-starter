@@ -14,19 +14,19 @@
         background-color: $warningBackgroundColour;
         color: $warningTextColour;
     }
-    
+
     &.ui-info_information {
         border-color: $informationBorderColour;
         background-color: $informationBackgroundColour;
         color: $informationTextColour;
     }
-    
+
     &.ui-info_error {
         border-color: $errorBorderColour;
         background-color: $errorBackgroundColour;
         color: $errorTextColour;
     }
-    
+
     &.ui-info_success {
         border-color: $successBorderColour;
         background-color: $successBackgroundColour;

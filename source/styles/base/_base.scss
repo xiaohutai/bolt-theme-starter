@@ -1,6 +1,6 @@
 /**
  * File:        _base.scss
- * Description: This base file contains all project VARIABLES, MIXINS and EXTENDS 
+ * Description: This base file contains all project VARIABLES, MIXINS and EXTENDS
  * Author:      Sebastiaan Bonardt - @_sebbon
  */
 
@@ -39,7 +39,7 @@ $informationBackgroundColour: #d9edf7;
 $informationBorderColour: darken($informationBackgroundColour, 5%);
 $warningTextColour: #8a6d3b;
 $warningBackgroundColour: #fcf8e3;
-$warningBorderColour: darken($warningBackgroundColour, 5%); 
+$warningBorderColour: darken($warningBackgroundColour, 5%);
 
 // Media Query Breakpoints
 $break-midmobile: 400; //400px = 25rem
@@ -56,52 +56,52 @@ $site-max-width:80rem; // insert your sane value here
 
 @mixin respond-to($media) {
     @if $media == midmobile {
-        @media only screen and (min-width: ($break-midmobile / 16) + 'em') { 
+        @media only screen and (min-width: ($break-midmobile / 16) + 'em') {
            @content;
         }
-    } 
+    }
     @if $media == small-screens {
-        @media only screen and (min-width: ($break-small / 16) + 'em') { 
-           @content;  
-        }
-    } 
-    @if $media == medium-screens {
-        @media only screen and (min-width: ($break-medium / 16) + 'em') { 
+        @media only screen and (min-width: ($break-small / 16) + 'em') {
            @content;
         }
-    } 
+    }
+    @if $media == medium-screens {
+        @media only screen and (min-width: ($break-medium / 16) + 'em') {
+           @content;
+        }
+    }
     @if $media == large-screens {
-        @media only screen and (min-width: ($break-large / 16) + 'em') { 
+        @media only screen and (min-width: ($break-large / 16) + 'em') {
            @content;
         }
     }
     @if $media == up-to-large-screens {
-        @media only screen and (max-width: (($break-large - 1) / 16) + 'em') { 
+        @media only screen and (max-width: (($break-large - 1) / 16) + 'em') {
            @content;
         }
-    }  
+    }
     @if $media == xlarge-screens {
-        @media only screen and (min-width: ($break-xlarge / 16) + 'em') { 
+        @media only screen and (min-width: ($break-xlarge / 16) + 'em') {
            @content;
-        }  
-    }  
+        }
+    }
     @if $media == wide-screens {
-        @media only screen and (min-width: ($break-wide / 16) + 'em') { 
+        @media only screen and (min-width: ($break-wide / 16) + 'em') {
            @content;
         }
     }
     @if $media == xwide-screens {
-        @media only screen and (min-width: ($break-xwide / 16) + 'em') { 
+        @media only screen and (min-width: ($break-xwide / 16) + 'em') {
            @content;
-        } 
+        }
     }
     @if $media == xxwide-screens {
-        @media only screen and (min-width: ($break-xxwide / 16) + 'em') { 
+        @media only screen and (min-width: ($break-xxwide / 16) + 'em') {
            @content;
         }
     }
     @if $media == r-u-insane {
-        @media only screen and (min-width: ($break-r-u-insane / 16) + 'em') { 
+        @media only screen and (min-width: ($break-r-u-insane / 16) + 'em') {
            @content;
         }
     }

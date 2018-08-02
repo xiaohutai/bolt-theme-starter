@@ -1,7 +1,7 @@
 @keyframes spinner {
   to {transform: rotate(360deg);}
 }
- 
+
 .spinner {
   transition: 400ms padding ease-in-out;
   &:after {

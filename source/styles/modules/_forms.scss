@@ -1,6 +1,6 @@
 /**
  * File:        _forms.scss
- * Description: _forms.scss makeitso 
+ * Description: _forms.scss makeitso
  * Author:      Sebastiaan Bonardt - @_sebbon
  */
 
@@ -119,15 +119,15 @@ input {
     }
     &[type="submit"], button[type="submit"] {
         border:0;
-        color:$white; 
+        color:$white;
         float: left;
         display: block;
         padding: 0.35rem 0.75em;
         line-height: 1.5;
         display:block;
         clear:both;
-        width:auto;  
-        background-color: $darkGrey;   
+        width:auto;
+        background-color: $darkGrey;
         border-radius: 0;
     }
 }

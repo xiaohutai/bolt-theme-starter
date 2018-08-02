@@ -6,22 +6,22 @@ jQuery(function ($) {
     var breakMedium = 37.5; //600px is 37.5em
     var breakLarge = 48; //768px is 48em
     var breakXlarge = 60; //960px is 60em
-    var breakWide = 80; //1280px is 80em    
+    var breakWide = 80; //1280px is 80em
     var windowWidth = viewportSize.getWidth(); //replaces buggy and unreliable $(window).width();
     // assume base font size is 16px and set windowWidth in em
     var windowWidthEm = ((viewportSize.getWidth()) / 16);
 
-    // Run initial checks for page setup. Checks the viewport width 
+    // Run initial checks for page setup. Checks the viewport width
     // and does some actions for the UI based on screen size
     preLoadChecks();
-    
+
     // set all links with class 'external' to have target _blank
     $('a.external').attr('target', "_blank");
 
     // do preLoadChecks when window is resized
     var resizeId;
-    $(window).resize(function() { 
-        // add setTimeout to reduce resize events      
+    $(window).resize(function() {
+        // add setTimeout to reduce resize events
         clearTimeout(resizeId);
         resizeId = setTimeout(preLoadChecks, 20);
     });
@@ -43,7 +43,7 @@ jQuery(function ($) {
                     $(".toggle-menu").removeClass("toggle-active");
                     $(".toggle-search").addClass("toggle-active");
                     searchform.slideDown().addClass("expanded");
-                });             
+                });
             }
             else {
                 $(this).addClass("toggle-active");
@@ -80,7 +80,7 @@ jQuery(function ($) {
 
 
     /*
-    // function preLoadChecks: 
+    // function preLoadChecks:
     // checks and does some visual UI changes on page load, based on viewport width.
     // As we have a mobile first approach, we trigger this function on window resize
     // Mainly to put all moved, cloned and shown items back in the state they were on small screens
@@ -89,17 +89,17 @@ jQuery(function ($) {
     // only gets larger!
     */
     function preLoadChecks() {
-        // update windoWidth from viewportSize.js (cross browser JS plugin), 
+        // update windoWidth from viewportSize.js (cross browser JS plugin),
         // because this needs to be checked again after window resize
         windowWidth = viewportSize.getWidth(); // better $(window).width();
         windowWidthEm = (viewportSize.getWidth()) / 16; // (16px/1em/rem basis)
 
         // do various UI changes based on design breakpoints
-        // Breakpoints are defined at the start of this file, and (should) generally coincide 
+        // Breakpoints are defined at the start of this file, and (should) generally coincide
         // with the breakpoints defined and used in your css
 
         // if the windowWidth is smaller than the Small Breakpoint
-        if ( windowWidthEm <= breakSmall) { 
+        if ( windowWidthEm <= breakSmall) {
             // nothing specified
         }
 
@@ -114,12 +114,12 @@ jQuery(function ($) {
             }
             // subsequently hide the search block, and display the toggle-search button
             $(".search-block").hide();
-            $(".toggle-search").show(); 
+            $(".toggle-search").show();
 
             // hide the primary-navigation, and show the toggle-menu button
             $(".navigation-primary .menu").hide();
             $(".toggle-menu").show();
-            
+
             // use the mobile logo image on smaller screens again after resize
             $(".logo img").attr("src", $(".logo img").attr("data-src-mobile") );
         }
@@ -129,7 +129,7 @@ jQuery(function ($) {
             $(".search-block").appendTo('body > header .inner-wrap').show();
             // hide the toggle-search button, because from this breakpoint on
             // the search functionality is visible, so hide the search toggle button
-            $(".toggle-search").hide(); 
+            $(".toggle-search").hide();
             // show the primary navigation from this breakpoint on
             $(".navigation-primary .menu").show();
             // the menu is visible from this breakpoint on, so hide the menu toggle button
