@@ -1,0 +1,199 @@
+/**
+ * File:        _forms.scss
+ * Description: _forms.scss makeitso 
+ * Author:      Sebastiaan Bonardt - @_sebbon
+ */
+
+form {
+    width:100%;
+    margin-bottom: $baseBottomMargin;
+}
+
+fieldset {
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 3px;
+    &.ui-fieldset-present {
+        border: 1px solid $grey;
+        margin-bottom: 1.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+legend {
+    font-size: 1.5rem;
+}
+
+label {
+    color:$black;
+    font-size: 1rem;
+    display:block;
+    font-weight:bold;
+    margin-bottom: 0.25em;
+    &.error, .has-error & {
+        color: $errorTextColour;
+    }
+}
+
+.required-field {
+    color:$red;
+    font-size: 0.8rem;
+    font-weight:bold;
+    margin-left: 0.5rem;
+}
+
+input {
+    box-sizing: border-box;
+    border:1px solid $grey;
+    padding: 0.5em;
+    font-size: 1rem;
+    margin-bottom:1.5rem;
+    width:100%;
+    border-radius: 3px;
+    &:disabled {
+        background: $offWhite;
+        border-color: lighten($grey, 15%);
+        cursor: not-allowed;
+    }
+    &:focus {
+        border-color:$black;
+    }
+    &.error, .has-error & {
+        border: 1px solid $errorTextColour;
+        margin-bottom: 0.625rem;
+        &:focus {
+            border: 1px solid $grey;
+        }
+    }
+    &[type="text"] {
+        -webkit-appearance: none;
+        border-radius: 3px;
+    }
+    &[type="search"] {
+        -webkit-appearance: none;
+        border-radius: 3px;
+    }
+    &[type="password"] {
+        -webkit-appearance: none;
+        border-radius: 3px;
+    }
+    &[type="radio"] {
+        width: auto;
+        margin-right:0.25rem;
+        display:inline-block;
+        margin-bottom:0;
+        margin-bottom:0;
+        & + label {
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 1rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            position: relative;
+            top: 2px;
+        }
+        &.error, .has-error & {
+            border: 1px solid $errorTextColour;
+            & + label {
+                color: $errorTextColour;
+            }
+        }
+    }
+    &[type="checkbox"] {
+        width: auto;
+        margin-right:0.25rem;
+        display:inline-block;
+        margin-bottom:0;
+        margin-bottom:0;
+        & + label {
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 1rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            position: relative;
+            top: 2px;
+        }
+    }
+    &[type="submit"], button[type="submit"] {
+        border:0;
+        color:$white; 
+        float: left;
+        display: block;
+        padding: 0.35rem 0.75em;
+        line-height: 1.5;
+        display:block;
+        clear:both;
+        width:auto;  
+        background-color: $darkGrey;   
+        border-radius: 0;
+    }
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    resize: vertical;
+    border:1px solid $grey;
+    margin-bottom:1.5rem;
+    border-radius: 3px;
+    padding: 0.5rem;
+    &:focus {
+        border-color:$black;
+        outline:none;
+    }
+    &.error, .has-error & {
+        border-color: $errorTextColour;
+        margin-bottom: 0.625rem;
+        &:focus {
+            background-color:$white;
+        }
+    }
+}
+
+select {
+    max-width: 320px;
+    box-sizing: border-box;
+    border:1px solid $grey;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom:1.5rem;
+    width:100%;
+    border-radius: 3px;
+    &.error, .has-error & {
+        border-color: $errorTextColour;
+        margin-bottom: 0.625rem;
+        &:focus {
+            background-color:$white;
+        }
+    }
+}
+
+.form-item {
+    max-width: 600px;
+}
+
+.form-item_error-message {
+    margin-bottom: 1.5rem;
+    color: $errorTextColour;
+    padding: 0.35rem 0.5em;;
+    //margin-left: 0.625rem;
+    border: 1px solid $errorTextColour;
+    background: $errorBackgroundColour;
+    border-radius: 4px;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        top: -5px;
+        left: 1.5rem;
+        border-left: 1px solid $errorTextColour;
+        border-top: 1px solid $errorTextColour;
+        transform: rotate(45deg);
+        background-color: $errorBackgroundColour;
+    }
+}

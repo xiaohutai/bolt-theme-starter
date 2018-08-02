@@ -1,0 +1,60 @@
+/**
+ * File:        _search.scss
+ * Description: _search.scss for makeitso. The
+ *              search block is at the top right of the default page templates
+ * Author:      Sebastiaan Bonardt - @_sebbon
+ */
+
+// search block styling
+.search-block {
+    margin: 2rem 0 0;
+    overflow: hidden;
+    display: block;
+    padding: 0 0.625rem;
+    @include respond-to(small-screens) {
+        float: right;
+    }
+    @include respond-to(medium-screens) {
+        max-width: 220px;
+        margin-top: 0.8125rem;
+    }
+    @include respond-to(large-screens) {
+        max-width: 320px;
+    }
+    @include respond-to(xlarge-screens) {
+        max-width: none;
+        width: 32%;
+    }
+    label {
+        display: none;
+        clear: both;
+    }
+    [type="submit"] {
+        border-left: 0;
+        width: 90px;
+        clear:none;
+        background-color:$darkGrey;
+        color:$white;
+        &:hover, &:active, &:focus {
+            background-color: $black;
+        }
+    }
+    [type="text"], [type="search"] {
+        width: calc(100% - 90px);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    input, button {
+        float: left;
+        width: calc(100% - 71px);
+        padding-left: 0.35rem;
+    }
+    .search_field {
+        padding: 0.45rem 0.35rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    input {
+        height: 36px;
+    }
+}

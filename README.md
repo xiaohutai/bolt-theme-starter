@@ -73,7 +73,7 @@ npm run build
 - `bolt/boltforms`
 - `bolt/labels`
 - `twokings/hierarchical-routes`
-- `twokings/searchable-content`
+- `twokings/bolt-searchable-content-extension`
 
 
 ### Configuration
