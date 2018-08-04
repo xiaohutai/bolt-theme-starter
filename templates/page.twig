@@ -1,4 +1,4 @@
-{% extends 'partials/_master.twig' %}
+{% extends 'layouts/master.twig' %}
 
 {% block main %}
 
@@ -9,33 +9,29 @@
                 <article role="article" class="content">
                     <h1 class="title is-size-1 is-size-3-mobile">{{ record.title }}</h1>
 
-                    {% include 'partials/_record_meta.twig' with {'extended': true} %}
+                    {{ include('partials/_record_meta.twig', { extended: true }) }}
 
                     {{ record.teaser }}
 
                     {% if record.image is not empty %}
-                    <figure class="image">
-                        <img src="{{ record.image|image(640, 360, "r") }}" alt="{{ record.values.image.alt|default() }}" />
-                        {# <img src="https://bulma.io/images/placeholders/640x360.png"> #}
-                        <figcaption>
-                            {{ record.values.image.title|default() }}
-                            {# Figure 1: Some beautiful placeholders #}
-                        </figcaption>
-                    </figure>
+                        <figure>
+                            <img src="{{ record.image|image(640, 360, "r") }}" alt="{{ record.values.image.alt|default() }}" />
+                            <figcaption>
+                                {{ record.values.image.title|default() }}
+                            </figcaption>
+                        </figure>
                     {% endif %}
 
                     {{ record.body }}
 
-                    {# If there are repeaters, we should output them. #}
                     {% with { 'record': record, 'common': false, 'repeaters': true, 'blocks': true, 'exclude': ['teaser', 'body', 'image'] } %}
-                    {{ block('sub_fields', 'partials/_sub_fields.twig') }}
+                        {{ block('sub_fields', 'partials/_sub_fields.twig') }}
                     {% endwith %}
 
-                    {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
-                    {{ dump(record) }}
-                    #}
-
-                    {{ include('partials/_recordfooter.twig', { 'record': record, 'extended': true }) }}
+                    {{ include('partials/_recordfooter.twig', {
+                        record: record,
+                        extended: true
+                    }) }}
                 </article>
             </div>
             <div class="column">

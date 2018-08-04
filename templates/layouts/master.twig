@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        {# --- Add SEO tags ---
+        <title>
+            {%- block title %}
+            {{ seo.title() }}
+            {% endblock title -%}
+        </title>
+        {{ seo.metatags() }}
+        #}
+        <title>
+            {% block title %}
+                {%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+                    {{ config.get('general/sitename') -}}
+                {% if record.title is not defined and config.get('general/payoff') %} | {{ config.get('general/payoff') }}{% endif -%}
+            {% endblock title %}
+        </title>
+        {# --- Add meta tags ---
+        <meta name="description" content="{{ record.}}">
+        #}
+        {# --- Add manifest and icons
+           --- See: https://realfavicongenerator.net
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png', 'theme') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png', 'theme') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png', 'theme') }}">
+        <link rel="manifest" href="{{ asset('site.webmanifest', 'theme') }}">
+        <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg', 'theme') }}" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+        #}
+        {# --- Add a font ---
+        <link href="https://fonts.googleapis.com/css?family=Bitter|Roboto:400,400i,700" rel="stylesheet">
+        #}
+        {% block styles %}
+        <link rel="stylesheet" href="{{ asset('dist/styles/main.css', 'theme') }}">
+        {% endblock styles %}
+    </head>
+    <body>
+
+        <a href="#content" class="visually-hidden focusable skip-link">Skip to main content</a>
+
+        {% block header %}
+            <header role="banner" class="header">
+                {{ include('partials/_navbar.twig') }}
+            </header>
+        {% endblock header %}
+
+        {% block main %}
+            {# {% if global.request.get('_route') == "homepage" %} #}
+            <main id="content">
+                <p>This is the master template.</p>
+            </main>
+        {% endblock main %}
+
+        {% block footer %}
+            <footer role="contentinfo" class="footer">
+                <div class="container">
+                    <nav role="navigation" aria-label="footer navigation">
+                        <div>
+                                <p>
+                                    &copy; {{ "now"|date("Y") }} &bullet;
+                                    {{ __("This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.", {
+                                        '%url%':'https://bolt.cm'
+                                    }) }}
+                                </p>
+                        </div>
+                        <div>
+                            {{ menu(
+                                identifier = 'main',
+                                template = 'partials/_sub_menu_footer.twig',
+                                params = {
+                                    withsubmenus: false
+                                }
+                            ) }}
+                        </div>
+                    </nav>
+                    {{ widgets('footer') }}
+                </div>
+            </footer>
+        {% endblock footer %}
+
+        {% block scripts %}
+            <script src="{{ asset('dist/scripts/main.js', 'theme') }}"></script>
+        {% endblock scripts %}
+
+        {% if app.request.getHttpHost() in [ "LIVESITE.COM" ] %}
+            <script>
+                window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+                ga('create', 'UA-XXXXX-Y', 'auto');
+                ga('set', 'anonymizeIp', true);
+                ga('send', 'pageview');
+            </script>
+            <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        {% endif %}
+
+        {% if theme.browsersync %}
+            <script id="__bs_script__">
+            //<![CDATA[
+                document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.6'><\/script>".replace("HOST", location.hostname));
+            //]]>
+            </script>
+        {% endif %}
+
+    </body>
+</html>

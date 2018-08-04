@@ -1,0 +1,56 @@
+{% extends 'layouts/master.twig' %}
+
+{% block main %}
+
+    <section>
+
+        {% if taxonomytype is defined %}
+            <h1>
+                {{ __('general.phrase.overview-for') }}
+                {% if taxonomy.options[slug] is defined %}
+                    {{ taxonomy.options[slug] }}
+                {% else %}
+                    {{ slug }}
+                {% endif %}
+            </h1>
+
+            {% if not taxonomy.has_sortorder %}
+                {% set records = records|order(global.config.get('general/listing_sort')) %}
+            {% endif %}
+        {% endif %}
+
+        {% for record in records %}
+
+            <article class="item-teaser">
+                <h2>
+                    <a href="{{ record.link }}">{{ record.title }}</a>
+                </h2>
+                {{ include('partials/_recordfooter.twig', { record: record }) }}
+                <img src="{{ image(record.image, 1200, 500) }}" />
+
+                {% if record.introduction %}
+                    {{ record.introduction }}
+                {% elseif record.teaser %}
+                    {{ record.teaser }}
+                {% else %}
+                    <p>{{ record.excerpt(300, false, search|default('')) }}</p>
+                {% endif %}
+
+            </article>
+
+        {% else %}
+
+            <article>
+                <h2>{{ __('general.phrase.no-content-found') }}</h2>
+                <p>
+                    {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                </p>
+            </article>
+
+        {% endfor %}
+
+        {{ pager(template = 'partials/_sub_pager.twig') }}
+
+    </section>
+
+{% endblock main %}

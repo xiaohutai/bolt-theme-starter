@@ -1,16 +1,13 @@
-{# Footer #}
-<footer role="contentinfo" class="footer">
+<footer role="contentinfo">
     <div class="container">
-        <nav class="level" role="navigation" aria-label="footer navigation">
-            <div class="level-left">
-                <div class="level-item">
-                    <p>
-                        &copy; {{ "now"|date("Y") }} &bullet;
-                        {{ __("This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.", {'%url%':'https://bolt.cm'}) }}
-                    </p>
-                </div>
+        <nav role="navigation" aria-label="footer navigation">
+            <div>
+                <p>
+                    &copy; {{ "now"|date("Y") }} &bullet;
+                    {{ __("This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.", {'%url%':'https://bolt.cm'}) }}
+                </p>
             </div>
-            <div class="level-right">
+            <div>
                 {{ menu(
                     identifier = 'main',
                     template = 'partials/_sub_menu_footer.twig',
@@ -21,8 +18,3 @@
         {{ widgets('footer') }}
     </div>
 </footer>
-
-{#
-<script src="{{ asset('js/normalizeBrightness.js', 'theme') }}"></script>
-<script src="{{ asset('js/app.js', 'theme') }}"></script>
-#}

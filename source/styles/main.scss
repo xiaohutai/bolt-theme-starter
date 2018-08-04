@@ -6,8 +6,12 @@
  */
 @import "../../node_modules/normalize.css/normalize";
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #ffcccc;
+    background-color: #ccffcc;
 }
 
 .page {
