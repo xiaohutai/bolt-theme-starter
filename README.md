@@ -25,6 +25,8 @@ npm run build
 | `npm run styles`       | Build styles (`sass` + `postcss`)        | ✅           |
 | `npm run scripts`      | Compile JS                               | ❌           |
 | `npm run build`        | Build everything (`styles` + `scripts`)  | ✅           |
+| `npm run lint`         | Lint styles                              |               |
+| `npm run eslint`       | Lint scripts                             |               |
 
 
 ## Folder Structure
