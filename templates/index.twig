@@ -2,20 +2,32 @@
 
 {% block main %}
 
-<section>
+<section id="content">
     <div>
         {# --- REMOVE --- #}
         {% if user %}
-            <div>
+            <div class="ui-info ui-info--information">
+                <h2>Getting started</h2>
                 <ul>
                     <li>Check the <a href='https://github.com/xiaohutai/bolt-theme-starter/blob/master/README.md'>readme.md</a> for instructions on how to customize this theme.</li>
                     {% if isallowed('prefill') %}
                         <li>{{ __("page.dashboard.quickstart", {'%url%': path('prefill', {'force': 1})}) }}</li>
                     {% endif %}
+                    <li><a href='{{ path('fileedit', {'namespace': 'theme', 'file': 'index.twig'}) }}'>Edit this template</a> to get rid of this callout.</li>
                 </ul>
             </div>
         {% endif %}
         {# --- /REMOVE --- #}
+
+        {# --- TEST --- #}
+        <div class="grid">
+            {% for i in range(1, 12) %}
+                <div>
+                    <img src="https://source.unsplash.com/random" alt="{{ i }}"/>
+                </div>
+            {% endfor %}
+        </div>
+        {# --- /TEST --- #}
 
         {% setcontent homepage = "homepage/1" %}
         {% if homepage %}

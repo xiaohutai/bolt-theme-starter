@@ -1,23 +1,25 @@
-/**
- * File:        _base.scss
- * Description: This base file contains all project VARIABLES, MIXINS and EXTENDS
- * Author:      Sebastiaan Bonardt - @_sebbon
- */
-
 // WEBSITE SETTINGS. Change these as desired:
 $baseFontFamily: 'Lato', "Droid Sans", Arial, Sans-serif;
-$baseHeaderFontFamily: 'Montserrat', "Droid Sans", Arial, Sans-serif; //check your typography.scss for webfonts
+$baseHeaderFontFamily: 'Montserrat', "Droid Sans", Arial, Sans-serif;
 
 $baseBottomMargin: 2.5rem;
+
+// Theme
+// Skin
+// Accent
+
+// Primary and secondary colors
+// Accent colors
+// Neutrals
+// Semantic colors
 
 // Theme colors
 $baseFontColour:#222;
 $baseFontHeaderColour:#333;
 $baseLinkColour:#4a90e2;
-$baseFirstThemeColour:#ccc; //this colour is "Colour name 'e.g. Pink'" the main theme colour used in
-$baseSecondThemeColour:#eee; //this colour is the secondary theme colour used in
+$baseFirstThemeColour:#ccc;
+$baseSecondThemeColour:#eee;
 
-// Generic helper colours
 $black: #222;
 $darkGrey: #666;
 $grey: #999;
@@ -108,9 +110,9 @@ $site-max-width:80rem; // insert your sane value here
 }
 
 // Mixin: REM to Px
-@function remToPx($number) {
-    @return #{$number}rem;
-}
+// @function remToPx($number) {
+//     @return #{$number}rem;
+//}
 
 %clearfix, %group {
   &:after {

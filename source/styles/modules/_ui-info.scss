@@ -6,28 +6,28 @@
     border-style: solid;
     border-color: darken($lightGrey, 10%);
     border-width: 1px 1px 1px 8px;
-    p {
+    p, ul {
         margin-bottom: 0;
     }
-    &.ui-info_warning {
+    &.ui-info--warning {
         border-color: $warningBorderColour;
         background-color: $warningBackgroundColour;
         color: $warningTextColour;
     }
 
-    &.ui-info_information {
+    &.ui-info--information {
         border-color: $informationBorderColour;
         background-color: $informationBackgroundColour;
         color: $informationTextColour;
     }
 
-    &.ui-info_error {
+    &.ui-info--error {
         border-color: $errorBorderColour;
         background-color: $errorBackgroundColour;
         color: $errorTextColour;
     }
 
-    &.ui-info_success {
+    &.ui-info--success {
         border-color: $successBorderColour;
         background-color: $successBackgroundColour;
         color: $successTextColour;

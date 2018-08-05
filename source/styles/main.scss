@@ -10,10 +10,24 @@ html, body {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: #ccffcc;
+// TEST GRID
+// ⚠  auto-fit value is not supported by IE [autoprefixer]
+// ⚠  grid-auto-rows is not supported by IE [autoprefixer]
+
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
+}
+.grid div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+// TEST GRID
+//
 .page {
     display: grid;
     grid-gap: 33px;
