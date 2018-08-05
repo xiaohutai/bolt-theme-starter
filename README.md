@@ -2,8 +2,21 @@
 
 A simple theme with re-usable components.
 
-Install this theme via Bolt, or `git clone` this repository into your Bolt's
-`themes` folder.
+
+## Installation
+
+There are two options to get this theme:
+
+- Install this theme via the Bolt backend at `/bolt/extensions`.
+- Do a `composer require xiaohutai/bolt-theme-starter` in your Bolt's `extensions` folder.
+
+For making pull requests, you need to navigate to your Bolt's `themes` folder,
+then:
+
+```sh
+git clone git@github.com:xiaohutai/bolt-theme-starter.git
+```
+
 
 ## Getting Started
 
@@ -78,17 +91,42 @@ npm run build
 
 ### Extensions
 
-`[Optional]` Install the following recommended extensions:
+By default, this extension automatically installs the following extensions:
 
-- `animal/translate`
 - `bacboslab/menueditor`
 - `bobdenotter/seo`
 - `bolt/basewidget`
 - `bolt/boltforms`
-- `bolt/labels`
-- `twokings/hierarchical-routes`
 - `twokings/bolt-searchable-content-extension`
+- `twokings/hierarchical-routes`
 
+These extensions will be uninstalled if you uninstall this theme. You can install
+them separately in order to keep them:
+
+```sh
+composer require bacboslab/menueditor
+composer require bobdenotter/seo
+composer require bolt/basewidget
+composer require bolt/boltforms
+composer require twokings/bolt-searchable-content-extension
+composer require twokings/hierarchical-routes
+```
+
+#### Commonly Used Extensions
+
+- `animal/translate`
+- `bolt/disqus`
+- `bolt/jsonapi`
+- `bolt/labels`
+- `bolt/sitemap`
+
+```sh
+composer require animal/translate
+composer require bolt/labels
+composer require bolt/jsonapi
+composer require bolt/sitemap
+composer require bolt/disqus
+```
 
 ### Configuration
 
