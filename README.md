@@ -38,7 +38,11 @@ npm run build
 │   ├── styles
 │   └── ...
 ├── config
+│   ├── config.yml
 │   ├── contenttypes.yml
+│   ├── routing.yml
+│   ├── extensions/boltforms.bolt.yml
+│   ├── extensions/seo.bobdenotter.yml
 │   └── ...
 ├── source
 │   ├── scripts
@@ -47,16 +51,24 @@ npm run build
 ├── templates
 │   ├── components
 │   ├── layouts
+│   ├── partials
 │   └── ...
 ├── .babelrc
+├── .browserslistrc
 ├── .editorconfig
 ├── .eslintrc.js
-├── .eslintignore
 ├── .gitignore
-├── .postcssrc.js
+├── .postcssrc
+├── browserconfig.yml
+├── CHANGELOG.md
+├── composer.json
+├── cssnano.config.js
+├── LICENSE
 ├── package.json
 ├── package-lock.json
 ├── README.md
+├── site.webmanifest
+├── theme.yml
 └── ...
 ```
 
@@ -85,6 +97,8 @@ npm run build
 - `config.yml`
 - `contenttypes.yml`
     - singletons
+    - blocks
+    - common elements
 - `routing.yml`
 
 
