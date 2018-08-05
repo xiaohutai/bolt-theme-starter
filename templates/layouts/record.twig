@@ -8,12 +8,7 @@
 
         <h1 data-bolt-field="title">{{ record.title }}</h1>
 
-        <div class="body-content">
-            {# Output all fields, in the order as defined in the contenttype.
-            To change the generated html and configure the options, see:
-            https://docs.bolt.cm/templating/fields-tag #}
-            {{ fields(template = 'partials/_sub_fields.twig') }}
-        </div>
+        {{ fields(template = 'partials/_sub_fields.twig') }}
 
         {{ include('partials/_recordfooter.twig', {
             record: record,

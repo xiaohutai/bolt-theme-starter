@@ -4,22 +4,30 @@
 
 <section>
     <div>
+        {# --- REMOVE --- #}
+        {% if user %}
+            <div>
+                <ul>
+                    <li>Check the <a href='https://github.com/xiaohutai/bolt-theme-starter/blob/master/README.md'>readme.md</a> for instructions on how to customize this theme.</li>
+                    {% if isallowed('prefill') %}
+                        <li>{{ __("page.dashboard.quickstart", {'%url%': path('prefill', {'force': 1})}) }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+        {# --- /REMOVE --- #}
+
         {% setcontent homepage = "homepage/1" %}
         {% if homepage %}
-            <div class="content">
+            <div>
                 <h2>{{ homepage.title }}</h2>
-                <div class="teaser">
+                <div>
                     {{ homepage.teaser }}
                 </div>
                 {{ homepage.content }}
-
                 {{ include('partials/_record_meta.twig', { record: homepage }) }}
             </div>
         {% endif %}
-        {#
-        {{ include('partials/_fresh_install.twig') }}
-        {{ include('partials/_no_content.twig') }}
-        #}
     </div>
     <div>
         {{ include('partials/_aside.twig') }}

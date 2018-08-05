@@ -11,8 +11,8 @@
             {% endif %}
         </h1>
         <form action="{{ path('search') }}">
-            <label class="label is-hidden" for="search">Search</label>
-            <input class="input" type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search" id="search">
+            <label for="search">Search</label>
+            <input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search" id="search">
             <button type="submit">{{ __('general.phrase.search') }}</button>
         </form>
     </div>
@@ -22,14 +22,17 @@
     <div>
 
         {% for record in records %}
-            <article role="article" class="media columns">
-                <div class="media-content column is-7">
-                    <div class="content">
-                        <h2 class="title"><a href="{{ record.link }}">{{ record.title }}</a></h2>
 
-                        <p class="meta is-hidden-touch">
+            <article>
+                <div>
+                    <div>
+                        <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
+
+                        <p>
                             {% if record.editlink() %}
-                                <span class="edit-link"><a href="{{ record.editlink() }}"><strong>Edit</strong></a></span> &bullet;
+                                <span class="edit-link">
+                                    <a href="{{ record.editlink() }}">Edit</a>
+                                </span> &bullet;
                             {% endif %}
                             <a href="{{ record.link() }}">{{ __('general.phrase.permalink') }}</a> &bullet;
                             {{ __('general.phrase.written-by-on', {
@@ -38,13 +41,12 @@
                             }) }}
                         </p>
 
-                        {# display something introduction-like.. #}
                         <p>{{ record.excerpt(300, false, search|default('')) }}</p>
                     </div>
                 </div>
                 {% if record.image is not empty %}
-                <div class="media-right column">
-                    <figure class="image">
+                <div>
+                    <figure>
                         <img src="{{ record.image|image(480, 320, "r") }}" alt="{{ record.values.image.alt|default() }}" />
                     </figure>
                 </div>
@@ -53,12 +55,8 @@
 
         {% else %}
 
-            <article role="article" class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <p>{{ __('general.phrase.no-result-for-search-term', { '%SEARCHTERM%': search|escape }) }}</p>
-                    </div>
-                </div>
+            <article>
+                <p>{{ __('general.phrase.no-result-for-search-term', { '%SEARCHTERM%': search|escape }) }}</p>
             </article>
 
         {% endfor %}

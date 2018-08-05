@@ -43,7 +43,7 @@
         <a href="#content" class="visually-hidden focusable skip-link">Skip to main content</a>
 
         {% block header %}
-            <header role="banner" class="header">
+            <header role="banner">
                 {{ include('partials/_navbar.twig') }}
             </header>
         {% endblock header %}
@@ -56,8 +56,8 @@
         {% endblock main %}
 
         {% block footer %}
-            <footer role="contentinfo" class="footer">
-                <div class="container">
+            <footer role="contentinfo">
+                <div>
                     <nav role="navigation" aria-label="footer navigation">
                         <div>
                                 <p>

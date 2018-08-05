@@ -1,4 +1,3 @@
-{# Sub-block for 'text' field such as 'text', 'textarea', or 'html' #}
 {% block text_field %}
     <div {% if key is not empty %}data-bolt-field="{{ key }}"{% endif %}>
         {%- autoescape false -%}
@@ -8,7 +7,6 @@
     </div>
 {% endblock %}
 
-{# Sub-block for Markdown fields #}
 {% block markdown_field %}
     <div {% if key is not empty %}data-bolt-field="{{ key }}"{% endif %}>
         {# If 'allowtwig' is true for this field, we'll need to parse it as Twig here. #}
@@ -16,37 +14,23 @@
     </div>
 {% endblock %}
 
-{# Sub-block for 'imagelist' fields #}
 {% block imagelist_field %}
-    <div class="imagelist columns is-multiline is-mobile">
+    <div>
         {% for image in value %}
-            <div class="imageholder column">
-                {{ popup(image.filename, 320, 240) }}
-            </div>
+            {{ popup(image.filename, 320, 240) }}
         {% endfor %}
     </div>
 {% endblock %}
 
-{# Block for "basic" fields like HTML, Markdown, Textarea and Text #}
 {% block common_fields %}
 
-    {# HTML, Textarea, Text fields #}
-    {% if fieldtype in ['html', 'textarea', 'text'] %}
+    {% if fieldtype in [ 'html', 'textarea', 'text' ] %}
         {{ block('text_field') }}
-    {% endif %}
-
-    {# Markdown fields #}
-    {% if fieldtype == 'markdown' %}
+    {% elseif fieldtype == 'markdown' %}
         {{ block('markdown_field') }}
-    {% endif %}
-
-    {# Image fields #}
-    {% if fieldtype == "image" and value.file|default is not empty %}
+    {% elseif fieldtype == "image" and value.file|default is not empty %}
         {{ value|showimage(752, 400) }}
-    {% endif %}
-
-    {# Video fields #}
-    {% if fieldtype == "video" and value.responsive|default is not empty %}
+    {% elseif fieldtype == "video" and value.responsive|default is not empty %}
         <div class="flex-video {{ value.ratio|default(1) > 1.5 ? 'widescreen' }}">
             {{ value.responsive }}
         </div>
@@ -54,35 +38,20 @@
 
 {% endblock %}
 
-{# Block for other field types, like Geo, Select, Checkbox and others. #}
 {% block extended_fields %}
 
-    {# Geolocation field #}
     {% if fieldtype == "geolocation" and value.latitude|default is not empty %}
         <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ value.latitude }},{{ value.longitude }}&amp;zoom=14&amp;size=617x300&amp;sensor=false&amp;markers={{ value.latitude }},{{ value.longitude }}">
-    {% endif %}
-
-    {# Special case for 'select' fields: if it's a multiple select, the value is an array. #}
-    {% if fieldtype == "select" and value is not empty %}
+    {% elseif fieldtype == "select" and value is not empty %}
         <p><strong>{{ record.contenttype.fields[key].label|default(key) }}: </strong>
         {{ value|join(", ") }}
         </p>
-    {% endif %}
-
-    {# Checkbox fields #}
-    {% if fieldtype == "checkbox" %}
+    {% elseif fieldtype == "checkbox" %}
         <p><strong>{{ record.contenttype.fields[key].label|default(key) }}: </strong>
         {{ value ? "checked" : "not checked" }}</p>
-    {% endif %}
-
-    {# Imagelist fields #}
-    {% if fieldtype == "imagelist" and value is not empty %}
+    {% elseif fieldtype == "imagelist" and value is not empty %}
         {{ block('imagelist_field') }}
-    {% endif %}
-
-    {# No special case defined for this type of field. We just output them, if it's
-       a simple scalar, and 'dump' them otherwise. #}
-    {% if fieldtype in [ 'filelist', 'datetime', 'date', 'integer', 'float' ] and value is not empty  %}
+    {% elseif fieldtype in [ 'filelist', 'datetime', 'date', 'integer', 'float' ] and value is not empty  %}
         <p><strong>{{ record.contenttype.fields[key].label|default(key) }}: </strong>
         {% if value is iterable %}
             {{ dump(value) }}
