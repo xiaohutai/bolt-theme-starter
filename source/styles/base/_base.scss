@@ -1,19 +1,18 @@
 // WEBSITE SETTINGS. Change these as desired:
-$baseFontFamily: 'Lato', "Droid Sans", Arial, Sans-serif;
-$baseHeaderFontFamily: 'Montserrat', "Droid Sans", Arial, Sans-serif;
+
+$baseFontFamily: "Lato", "Droid Sans", Arial, Sans-serif;
+$baseHeaderFontFamily: "Montserrat", "Droid Sans", Arial, Sans-serif;
 
 $baseBottomMargin: 2.5rem;
 
 // Theme
 // Skin
 // Accent
-
 // Primary and secondary colors
 // Accent colors
 // Neutrals
 // Semantic colors
 
-// Theme colors
 $baseFontColour:#222;
 $baseFontHeaderColour:#333;
 $baseLinkColour:#4a90e2;
@@ -29,7 +28,6 @@ $offWhite: #fefefe;
 $red: #f00;
 $highlightColour: $baseLinkColour;
 
-// UI colours
 $errorTextColour: #a94442;
 $errorBackgroundColour:#f2dede;
 $errorBorderColour: darken($errorBackgroundColour, 5%);
@@ -44,6 +42,7 @@ $warningBackgroundColour: #fcf8e3;
 $warningBorderColour: darken($warningBackgroundColour, 5%);
 
 // Media Query Breakpoints
+
 $break-midmobile: 400; //400px = 25rem
 $break-small: 481; //481px
 $break-medium: 600; //600px
@@ -58,52 +57,52 @@ $site-max-width:80rem; // insert your sane value here
 
 @mixin respond-to($media) {
     @if $media == midmobile {
-        @media only screen and (min-width: ($break-midmobile / 16) + 'em') {
+        @media only screen and (min-width: ($break-midmobile / 16) + "em") {
            @content;
         }
     }
     @if $media == small-screens {
-        @media only screen and (min-width: ($break-small / 16) + 'em') {
+        @media only screen and (min-width: ($break-small / 16) + "em") {
            @content;
         }
     }
     @if $media == medium-screens {
-        @media only screen and (min-width: ($break-medium / 16) + 'em') {
+        @media only screen and (min-width: ($break-medium / 16) + "em") {
            @content;
         }
     }
     @if $media == large-screens {
-        @media only screen and (min-width: ($break-large / 16) + 'em') {
+        @media only screen and (min-width: ($break-large / 16) + "em") {
            @content;
         }
     }
     @if $media == up-to-large-screens {
-        @media only screen and (max-width: (($break-large - 1) / 16) + 'em') {
+        @media only screen and (max-width: (($break-large - 1) / 16) + "em") {
            @content;
         }
     }
     @if $media == xlarge-screens {
-        @media only screen and (min-width: ($break-xlarge / 16) + 'em') {
+        @media only screen and (min-width: ($break-xlarge / 16) + "em") {
            @content;
         }
     }
     @if $media == wide-screens {
-        @media only screen and (min-width: ($break-wide / 16) + 'em') {
+        @media only screen and (min-width: ($break-wide / 16) + "em") {
            @content;
         }
     }
     @if $media == xwide-screens {
-        @media only screen and (min-width: ($break-xwide / 16) + 'em') {
+        @media only screen and (min-width: ($break-xwide / 16) + "em") {
            @content;
         }
     }
     @if $media == xxwide-screens {
-        @media only screen and (min-width: ($break-xxwide / 16) + 'em') {
+        @media only screen and (min-width: ($break-xxwide / 16) + "em") {
            @content;
         }
     }
     @if $media == r-u-insane {
-        @media only screen and (min-width: ($break-r-u-insane / 16) + 'em') {
+        @media only screen and (min-width: ($break-r-u-insane / 16) + "em") {
            @content;
         }
     }

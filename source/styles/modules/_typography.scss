@@ -1,41 +1,32 @@
-/**
- * File:        _typography.scss
- * Description: _typography.scss for makeitso
- * Author:      Sebastiaan Bonardt - @_sebbon
- */
-
-/* Split up webfont definitions for weights and styles. Be sure to declare
- * proper fallback fonts for your serif's or non-serifs, and use corresponding
- * font-weights and styles throughout your styles!
- */
-
-// @font-face {
-//     font-family: "yourFont";
-//     src: url("../path/yourFont.eot");
-//     src: url("../path/yourFont.eot?#iefix") format("embedded-opentype"),
-//     url("../path/yourFont.woff") format("woff"),
-//     url("../path/yourFont.svg#yourFont") format("svg");
-//     font-weight: normal;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "yourFontBold";
-//     src: url("../path/yourFontBold.eot");
-//     src: url("../path/yourFontBold.eot?#iefix") format("embedded-opentype"),
-//     url("../path/yourFontBold.woff") format("woff"),
-//     url("../path/yourFontBold.svg#yourFont") format("svg");
-//     font-weight: bold;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "yourFontItalic";
-//     src: url("../path/yourFontItalic.eot");
-//     src: url("../path/yourFontItalic.eot?#iefix") format("embedded-opentype"),
-//     url("../path/yourFontItalic.woff") format("woff"),
-//     url("../path/yourFontItalic.svg#yourFont") format("svg");
-//     font-weight: normal;
-//     font-style: italic;
-// }
+/*
+@font-face {
+    font-family: "yourFont";
+    src: url("../path/yourFont.eot");
+    src: url("../path/yourFont.eot?#iefix") format("embedded-opentype"),
+    url("../path/yourFont.woff") format("woff"),
+    url("../path/yourFont.svg#yourFont") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "yourFontBold";
+    src: url("../path/yourFontBold.eot");
+    src: url("../path/yourFontBold.eot?#iefix") format("embedded-opentype"),
+    url("../path/yourFontBold.woff") format("woff"),
+    url("../path/yourFontBold.svg#yourFont") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "yourFontItalic";
+    src: url("../path/yourFontItalic.eot");
+    src: url("../path/yourFontItalic.eot?#iefix") format("embedded-opentype"),
+    url("../path/yourFontItalic.woff") format("woff"),
+    url("../path/yourFontItalic.svg#yourFont") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}
+//*/
 
 body {
     font-size:100%;
@@ -44,10 +35,10 @@ body {
     line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: $baseHeaderFontFamily;
-    color:$baseFontHeaderColour;
+    color: $baseFontHeaderColour;
     margin-bottom: 0.5em;
     line-height: 1.25;
     font-weight: 700;

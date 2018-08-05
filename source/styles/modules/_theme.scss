@@ -1,11 +1,7 @@
-// The _theme.scss file is where you put all your theming classes that make up the design you want to implement. As a general rule of thumb it's good practice to put a group of style declarations in it's own logical
-
-/*
 // Example of how to create a grid with floats.
 // As these are all floated do not forget to set overflow hidden
 // on the wrapping div or use a clearfix/.group class.
 // Whatever floats your boat...
-*/
 .half {
     @include respond-to(medium-screens) {
         width: 50%;
@@ -14,7 +10,7 @@
     }
     & + .half {
         @include respond-to(medium-screens) {
-        padding: 0;
+            padding: 0;
         }
     }
 }

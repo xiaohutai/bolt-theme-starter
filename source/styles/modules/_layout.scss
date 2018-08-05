@@ -30,14 +30,17 @@ body {
     margin: 0;
     position: relative;
     padding: 0;
+
     > header, footer, main {
         width: 100%;
         display: block;
         overflow: hidden;
     }
+
     > header {
         padding:0;
     }
+
     > footer {
         min-height: 20rem;
         background-color: $lightGrey;
@@ -48,12 +51,15 @@ body {
 main {
     margin: 0;
     padding-top: 1rem;
+
     @include respond-to(medium-screens) {
         padding-top: 2rem;
     }
+
     > aside, article, section {
         margin-bottom: 2rem;
     }
+
     > aside {
         padding: 1rem 0;
     }
@@ -64,6 +70,7 @@ aside {
     overflow: hidden;
     clear: both;
     margin-bottom: 2rem;
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -75,17 +82,22 @@ aside {
     padding: 2rem 0.625rem;
     max-width: $site-max-width;
     position:relative;
+
     @include respond-to(large-screens) {
         padding: 1rem 1.25rem;
     }
+
     main > & {
         padding: 0 0.625rem 1rem;
+
         @include respond-to(large-screens) {
             padding: 1.25rem;
         }
     }
+
     header > & {
         padding: 1rem 0.625rem;
+
         @include respond-to(large-screens) {
             padding: 1rem 1.25rem;
         }
@@ -109,10 +121,12 @@ aside {
     display:inline-block;
     z-index:2;
     font-weight: bolder;
+
     &:after {
         content: ">>";
         margin-left:0.625rem;
     }
+
     &:focus {
         left:1.25em;
     }
@@ -120,36 +134,45 @@ aside {
 
 .logo {
     line-height: 1;
+
     &:link, &:visited {
         color: $black;
         text-decoration: none;
         font-size: 3.5rem;
     }
+
     &:hover, &:active, &:focus {
         text-decoration: underline;
     }
+
     @include respond-to(medium-screens) {
         float:left;
     }
+
     span {
         // display:none;
         text-transform: uppercase;
         font-size: 3rem;
         font-family: $baseHeaderFontFamily;
         font-weight: 800;
+
         @include respond-to(xlarge-screens) {
             font-size: 4rem;
         }
     }
+
     &.centered {
         text-align: center;
+
         @include respond-to(medium-screens) {
             float:none;
         }
+
         a {
             display:inline-block;
         }
     }
+
     img {
         width: 345px;
     }
@@ -170,17 +193,21 @@ aside {
 
 .main-content {
     overflow:hidden;
+
     @include respond-to(large-screens) {
         max-width: 66%;
         float: left;
         padding-right: 1rem;
     }
+
     @include respond-to(xlarge-screens) {
         padding-right: 3rem;
     }
+
     aside {
         clear: none;
         background-color: transparent;
+
         @include respond-to(xlarge-screens) {
             display: block;
             clear: both;
@@ -210,6 +237,7 @@ aside {
 .sidebar {
     background-color: transparent;
     border-top: 0;
+
     @include respond-to(large-screens) {
         float: left;
         width: 31%;
@@ -217,6 +245,7 @@ aside {
         margin-top: 5rem;
     }
     & + .main-content {
+
         @include respond-to(large-screens) {
         float: left;
         width: 66%;
@@ -225,6 +254,7 @@ aside {
 }
 
 .sidebar.sidebar-second {
+
     @include respond-to(large-screens) {
     float: left;
     margin-left: 3%;
@@ -233,13 +263,16 @@ aside {
 
 
 .two-sidebars {
+
     .main-content {
+
         @include respond-to(large-screens) {
 
         }
     }
     // both asides on level with main-content left and right when there's 'room' xlarge and up
     & ~ aside {
+
         @include respond-to(large-screens) {
 
         }
@@ -250,6 +283,7 @@ aside {
 .footer-logo {
     margin: 4rem 0 0 0;
     float: right;
+
     .logotype {
         // display:none;
         color:$grey;
@@ -258,6 +292,7 @@ aside {
         line-height: 1;
         font-family: $baseHeaderFontFamily;
         font-weight: 800;
+
         @include respond-to(xlarge-screens) {
             font-size: 4rem;
         }
@@ -267,6 +302,7 @@ aside {
 
 .footer-block {
     margin-bottom: $baseBottomMargin;
+
     @include respond-to(medium-screens) {
         float:left;
         width:46%;
@@ -274,6 +310,7 @@ aside {
 
 
     }
+
     @include respond-to(large-screens) {
         width:33%;
         padding-right: 2rem;

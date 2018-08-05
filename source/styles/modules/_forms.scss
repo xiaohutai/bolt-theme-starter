@@ -1,11 +1,5 @@
-/**
- * File:        _forms.scss
- * Description: _forms.scss makeitso
- * Author:      Sebastiaan Bonardt - @_sebbon
- */
-
 form {
-    width:100%;
+    width: 100%;
     margin-bottom: $baseBottomMargin;
 }
 
@@ -14,6 +8,7 @@ fieldset {
     padding-left: 0;
     padding-right: 0;
     border-radius: 3px;
+
     &.ui-fieldset-present {
         border: 1px solid $grey;
         margin-bottom: 1.5rem;
@@ -32,6 +27,7 @@ label {
     display:block;
     font-weight:bold;
     margin-bottom: 0.25em;
+
     &.error, .has-error & {
         color: $errorTextColour;
     }
@@ -52,14 +48,17 @@ input {
     margin-bottom:1.5rem;
     width:100%;
     border-radius: 3px;
+
     &:disabled {
         background: $offWhite;
         border-color: lighten($grey, 15%);
         cursor: not-allowed;
     }
+
     &:focus {
         border-color:$black;
     }
+
     &.error, .has-error & {
         border: 1px solid $errorTextColour;
         margin-bottom: 0.625rem;
@@ -67,24 +66,29 @@ input {
             border: 1px solid $grey;
         }
     }
+
     &[type="text"] {
         -webkit-appearance: none;
         border-radius: 3px;
     }
+
     &[type="search"] {
         -webkit-appearance: none;
         border-radius: 3px;
     }
+
     &[type="password"] {
         -webkit-appearance: none;
         border-radius: 3px;
     }
+
     &[type="radio"] {
         width: auto;
         margin-right:0.25rem;
         display:inline-block;
         margin-bottom:0;
         margin-bottom:0;
+
         & + label {
             display: inline-block;
             font-size: 1rem;
@@ -94,6 +98,7 @@ input {
             position: relative;
             top: 2px;
         }
+
         &.error, .has-error & {
             border: 1px solid $errorTextColour;
             & + label {
@@ -101,6 +106,7 @@ input {
             }
         }
     }
+
     &[type="checkbox"] {
         width: auto;
         margin-right:0.25rem;
@@ -117,6 +123,7 @@ input {
             top: 2px;
         }
     }
+
     &[type="submit"], button[type="submit"] {
         border:0;
         color:$white;
@@ -140,10 +147,12 @@ textarea {
     margin-bottom:1.5rem;
     border-radius: 3px;
     padding: 0.5rem;
+
     &:focus {
         border-color:$black;
         outline:none;
     }
+
     &.error, .has-error & {
         border-color: $errorTextColour;
         margin-bottom: 0.625rem;
@@ -162,6 +171,7 @@ select {
     margin-bottom:1.5rem;
     width:100%;
     border-radius: 3px;
+
     &.error, .has-error & {
         border-color: $errorTextColour;
         margin-bottom: 0.625rem;
@@ -184,6 +194,7 @@ select {
     background: $errorBackgroundColour;
     border-radius: 4px;
     position: relative;
+
     &:after {
         content: "";
         position: absolute;
