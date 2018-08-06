@@ -160,10 +160,10 @@ composer require twokings/hierarchical-routes
 
 ```sh
 composer require animal/translate
-composer require bolt/labels
-composer require bolt/jsonapi
-composer require bolt/sitemap
 composer require bolt/disqus
+composer require bolt/jsonapi
+composer require bolt/labels
+composer require bolt/sitemap
 ```
 
 ### Configuration
