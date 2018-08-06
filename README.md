@@ -41,6 +41,44 @@ npm run build
 | `npm run lint`         | Lint styles                              |               |
 | `npm run eslint`       | Lint scripts                             |               |
 
+## Theme Development
+
+### NPM Configuration Files
+
+#### Babel
+
+```
+.babelrc
+```
+
+#### ESLint
+
+```
+.eslintrc.js
+```
+
+####  PostCSS
+
+```
+.postcssrc
+```
+
+#### CSSNano
+
+```
+cssnano.config.js
+```
+
+
+####  Browserlist
+
+```
+.browserslistrc
+```
+
+- [https://www.npmjs.com/package/browserslist](https://www.npmjs.com/package/browserslist)
+- Check the browserslist with `npx browserslist` or online with [browserl.ist](http://browserl.ist/)
+
 
 ## Folder Structure
 
