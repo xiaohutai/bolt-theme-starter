@@ -153,3 +153,37 @@ TODO
 ### Components
 
 TODO
+
+## Fundamentals
+
+TODO
+
+### Grid
+
+TODO
+
+### Color
+
+TODO
+
+### Typography
+
+TODO
+
+### Accessibility
+
+TODO
+
+- [Inclusive Components by Heydon Pickering](https://inclusive-components.design/)
+
+
+### Web App Manifest
+
+Generate `favicon.ico`, `site.webmanifest`, and `browserconfig.xml` at [Favicon Generator](https://realfavicongenerator.net).
+
+- [The Web App Manifest on Google Web Fundamentals](https://developers.google.com/web/fundamentals/web-app-manifest/)
+
+
+## References
+
+- TODO
