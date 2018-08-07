@@ -19,7 +19,7 @@ There are two options to get this theme:
 - Install this theme via the Bolt backend at `/bolt/extensions`.
 - Do a `composer require xiaohutai/bolt-theme-starter` in your Bolt's `extensions` folder.
 
-For making pull requests, navigate to your Bolt's `themes` folder and `git clone`:
+For making pull requests, navigate to your Bolt's `themes` folder and clone this repo:
 
 ```sh
 git clone git@github.com:xiaohutai/bolt-theme-starter.git
@@ -50,71 +50,36 @@ npm run build
 | `npm run eslint`       | Lint scripts                             | ![n/a](https://img.shields.io/badge/-n/a-lightgrey.svg?longCache=true&style=flat-square) |
 
 
-### Configuration
+## Configuration
 
+| Name                                                        | File                | Github | More info |
+|-------------------------------------------------------------|---------------------|--------|-----------|
+| [Babel](https://babeljs.io)                                 | `.babelrc`          | [:octocat:](https://github.com/babel/babel) | [.babelrc](https://babeljs.io/docs/en/babelrc.html), [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) |
+| [ESLint](https://eslint.org)                                | `.eslintrc.js`      | [:octocat:](https://github.com/eslint/eslint) | [Configuring](https://eslint.org/docs/user-guide/configuring), [ESLint rules](https://eslint.org/docs/rules/) |
+| [PostCSS](https://postcss.org/)                             | `.postcssrc`        | [:octocat:](https://github.com/postcss/postcss) | |
+| [cssnano](https://cssnano.co/)                              | `cssnano.config.js` | [:octocat:](https://github.com/cssnano/cssnano) | |
+| [Browserlist](https://github.com/browserslist/browserslist) | `.browserslistrc`   | [:octocat:](https://github.com/browserslist/browserslist) | [browserl.ist](http://browserl.ist/) |
+| [Modernizr](https://modernizr.com/)                         | `.modernizr.json`   | [:octocat:](https://github.com/Modernizr/Modernizr) | |
 
-#### Babel
-
+Check the browserslist with
 ```
-.babelrc
-```
-
-- [.babelrc](https://babeljs.io/docs/en/babelrc.html)
-- [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env)
-
-
-#### ESLint
-
-```
-.eslintrc.js
+npx browserslist
 ```
 
-- [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
-- [List of available ESLint rules](https://eslint.org/docs/rules/)
+For Modernizer:
 
-
-####  PostCSS
-
-```
-.postcssrc
-```
-
-- [PostCSS](https://postcss.org/)
-- [PostCSS on Github](https://github.com/postcss/postcss)
-
-
-#### CSSNano
-
-```
-cssnano.config.js
-```
-
-- [cssnano.co](https://cssnano.co/)
-- [cssnano on Github](https://github.com/cssnano/cssnano)
-
-
-####  Browserlist
-
-```
-.browserslistrc
-```
-
-- [browserslist on NPM](https://www.npmjs.com/package/browserslist)
-- [browserslist on Github](https://github.com/browserslist/browserslist)
-- Check the browserslist with `npx browserslist` or online with [browserl.ist](http://browserl.ist/)
-
-
-#### Modernizr ![optional](https://img.shields.io/badge/-optional-brightgreen.svg?longCache=true&style=flat-square)
-
-- (1) Modify `.modernizr.json` accordingly and run `npm run modernizr` once.
-- (2) Add `class="no-js"` to `<html>` tag in `templates/layouts/master.twig`
-- [Modernizr: the feature detection library for HTML5/CSS3](https://modernizr.com/)
-- [Modernizr on Github](https://github.com/Modernizr/Modernizr).
+1. Modify `.modernizr.json` accordingly
+2. run `npm run modernizr` once.
+3. run `npm run build` once.
+4. Add `class="no-js"` to the `<html>` element in `templates/layouts/master.twig`
+5. Add `<script src="{{ asset('dist/scripts/lib/modernizr.js', 'theme') }}"></script>` in `templates/layouts/master.twig`
 
 
 ## Folder Structure
 
-```
+<details>
+    <summary>Folder structure</summary>
+<pre>
 .
 ├── dist
 │   ├── scripts
@@ -154,7 +119,8 @@ cssnano.config.js
 ├── site.webmanifest
 ├── theme.yml
 └── ...
-```
+</pre>
+</details>
 
 
 ## Recommendations

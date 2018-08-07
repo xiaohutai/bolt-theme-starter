@@ -1,5 +1,5 @@
 ---
-name: "📖 Documentation"
+name: "📚 Documentation"
 about: Typo mistakes, gaps or inconsistencies in documentation
 
 ---
