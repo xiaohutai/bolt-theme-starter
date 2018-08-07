@@ -80,6 +80,17 @@ cssnano.config.js
 - Check the browserslist with `npx browserslist` or online with [browserl.ist](http://browserl.ist/)
 
 
+#### Modernizr
+
+[Optional]
+
+- Modify `.modernizr.json` accordingly and run `npm run modernizr` once.
+- Add `class="no-js"` to `<html>` tag in `templates/layouts/master.twig`
+
+- [Modernizr: the feature detection library for HTML5/CSS3](https://modernizr.com/)
+- [Modernizr on Github](https://github.com/Modernizr/Modernizr).
+
+
 ## Folder Structure
 
 ```
