@@ -1,7 +1,16 @@
-# Starter, a Bolt Theme
+# Starter, a Bolt Theme ![work in progress](https://img.shields.io/badge/-work--in--progress-yellow.svg?longCache=true&style=flat-square)
 
-A simple theme with re-usable components.
+<p align="center">
+    <a href="#installation">Installation</a>
+  | <a href="#getting-started">Getting Started</a>
+  | <a href="#configuration">Configuration</a>
+  | <a href="#folder-structure">Folder Structure</a>
+  | <a href="#recommendations">Recommendations</a>
+  | <a href="#fundamentals">Fundamentals</a>
+  | <a href="#references">References</a>
+</p>
 
+---
 
 ## Installation
 
@@ -10,8 +19,7 @@ There are two options to get this theme:
 - Install this theme via the Bolt backend at `/bolt/extensions`.
 - Do a `composer require xiaohutai/bolt-theme-starter` in your Bolt's `extensions` folder.
 
-For making pull requests, you need to navigate to your Bolt's `themes` folder,
-then:
+For making pull requests, navigate to your Bolt's `themes` folder and `git clone`:
 
 ```sh
 git clone git@github.com:xiaohutai/bolt-theme-starter.git
@@ -33,13 +41,13 @@ npm run build
 
 | Command                | Description                              | Minification? |
 |------------------------|------------------------------------------|---------------|
-| `npm run sass`         | Compile SASS to CSS                      | ❌           |
-| `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ✅           |
-| `npm run styles`       | Build styles (`sass` + `postcss`)        | ✅           |
-| `npm run scripts`      | Compile JS                               | ❌           |
-| `npm run build`        | Build everything (`styles` + `scripts`)  | ✅           |
-| `npm run lint`         | Lint styles                              |               |
-| `npm run eslint`       | Lint scripts                             |               |
+| `npm run sass`         | Compile SASS to CSS                      | ![no](https://img.shields.io/badge/-no-red.svg?longCache=true&style=flat-square)   |
+| `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ![yes](https://img.shields.io/badge/-yes-brightgreen.svg?longCache=true&style=flat-square) |
+| `npm run styles`       | Build styles (`sass` + `postcss`)        | ![yes](https://img.shields.io/badge/-yes-brightgreen.svg?longCache=true&style=flat-square) |
+| `npm run scripts`      | Compile JS                               | ![no](https://img.shields.io/badge/-no-red.svg?longCache=true&style=flat-square)   |
+| `npm run build`        | Build everything (`styles` + `scripts`)  | ![yes](https://img.shields.io/badge/-yes-brightgreen.svg?longCache=true&style=flat-square) |
+| `npm run lint`         | Lint styles                              | ![n/a](https://img.shields.io/badge/-n/a-lightgrey.svg?longCache=true&style=flat-square) |
+| `npm run eslint`       | Lint scripts                             | ![n/a](https://img.shields.io/badge/-n/a-lightgrey.svg?longCache=true&style=flat-square) |
 
 
 ### Configuration
@@ -96,9 +104,7 @@ cssnano.config.js
 - Check the browserslist with `npx browserslist` or online with [browserl.ist](http://browserl.ist/)
 
 
-#### Modernizr
-
-[Optional]
+#### Modernizr ![optional](https://img.shields.io/badge/-optional-brightgreen.svg?longCache=true&style=flat-square)
 
 - (1) Modify `.modernizr.json` accordingly and run `npm run modernizr` once.
 - (2) Add `class="no-js"` to `<html>` tag in `templates/layouts/master.twig`
@@ -151,7 +157,7 @@ cssnano.config.js
 ```
 
 
-## Recommendations, Tips and Tricks
+## Recommendations
 
 
 ### Extensions
@@ -178,7 +184,7 @@ composer require twokings/hierarchical-routes
 ```
 
 
-#### Commonly Used Extensions
+#### Suggested Extensions ![optional](https://img.shields.io/badge/-optional-brightgreen.svg?longCache=true&style=flat-square)
 
 - `animal/translate`
 - `bolt/basewidget`
@@ -195,51 +201,25 @@ composer require bolt/labels
 ```
 
 
-### Bolt Configuration
+### Bolt Configuration ![optional](https://img.shields.io/badge/-optional-brightgreen.svg?longCache=true&style=flat-square)
 
-`[Optional]`
+The `config` directory has some `yml` files with useful blocks that you can copy
+and paste.
 
 - `config.yml`
 - `contenttypes.yml`
-    - singletons
-    - blocks
-    - common elements
 - `routing.yml`
 
 
-### Blocks
-
-TODO
-
-
-### Snippets
-
-TODO
-
-
-### Components
-
-TODO
+### Blocks ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
+### Snippets ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
+### Components ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
 
 ## Fundamentals
-
-TODO
-
-### Grid
-
-TODO
-
-### Color
-
-TODO
-
-### Typography
-
-TODO
-
-### Accessibility
-
-TODO
+### Grid ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
+### Color ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
+### Typography ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
+### Accessibility ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
 
 - [Inclusive Components by Heydon Pickering](https://inclusive-components.design/)
 
@@ -251,6 +231,4 @@ Generate `favicon.ico`, `site.webmanifest`, and `browserconfig.xml` at [Favicon 
 - [The Web App Manifest on Google Web Fundamentals](https://developers.google.com/web/fundamentals/web-app-manifest/)
 
 
-## References
-
-- TODO
+## References ![todo](https://img.shields.io/badge/-todo-red.svg?longCache=true&style=flat-square)
