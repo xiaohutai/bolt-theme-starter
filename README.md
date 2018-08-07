@@ -40,7 +40,7 @@ npm run build
 ```
 
 | Command                | Description                              | Minification? |
-|------------------------|------------------------------------------|---------------|
+|:-----------------------|:-----------------------------------------|:-------------:|
 | `npm run sass`         | Compile SASS to CSS                      | ![no](https://img.shields.io/badge/-no-red.svg?longCache=true&style=flat-square)   |
 | `npm run postcss`      | PostCSS (polyfill, autoprefixer)         | ![yes](https://img.shields.io/badge/-yes-brightgreen.svg?longCache=true&style=flat-square) |
 | `npm run styles`       | Build styles (`sass` + `postcss`)        | ![yes](https://img.shields.io/badge/-yes-brightgreen.svg?longCache=true&style=flat-square) |
@@ -53,7 +53,7 @@ npm run build
 ## Configuration
 
 | Name                                                        | File                | Github | More info |
-|-------------------------------------------------------------|---------------------|--------|-----------|
+|:------------------------------------------------------------|:--------------------|:------:|:----------|
 | [Babel](https://babeljs.io)                                 | `.babelrc`          | [:octocat:](https://github.com/babel/babel) | [.babelrc](https://babeljs.io/docs/en/babelrc.html), [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) |
 | [ESLint](https://eslint.org)                                | `.eslintrc.js`      | [:octocat:](https://github.com/eslint/eslint) | [Configuring](https://eslint.org/docs/user-guide/configuring), [ESLint rules](https://eslint.org/docs/rules/) |
 | [PostCSS](https://postcss.org/)                             | `.postcssrc`        | [:octocat:](https://github.com/postcss/postcss) | |
