@@ -1,0 +1,355 @@
+# -- ContentTypes --------------------------------------------------------------
+# - https://docs.bolt.cm/contenttypes/intro
+# - https://docs.bolt.cm/fields
+# - https://docs.bolt.cm/howto/resource-contenttype
+# ------------------------------------------------------------------------------
+
+__nodes:
+    # --------------------------------------------------------------------------
+    # Predefine fields configurations that can be re-used below.
+    # --------------------------------------------------------------------------
+    # -- (1) Text --------------------------------------------------------------
+    __text--l: &__text--l
+        type: text
+        class: large
+    __text--m: &__text--m
+        type: text
+    __text--s: &__text--s
+        type: text
+        class: narrow
+    __text--l-inline: &__text--l-inline
+        <<: *__text--l
+        variant: inline
+    __text--m-inline: &__text--m-inline
+        <<: *__text--m
+        variant: inline
+    __text--s-inline: &__text--s-inline
+        <<: *__text--s
+        variant: inline
+    # -- (2) HTML --------------------------------------------------------------
+    __html: &__html
+        type: html
+        # options: (CKEditor)
+    # -- (3) Image -------------------------------------------------------------
+    __image: &__image
+        type: image
+        placeholder: https://source.unsplash.com/1920x640/?cityscape,landscape,nature/__random__
+    # -- (4) File --------------------------------------------------------------
+    # -- (5) Video -------------------------------------------------------------
+    # -- (6) Select ------------------------------------------------------------
+    # -- (7) Markdown ----------------------------------------------------------
+    # -- (8) Textarea ----------------------------------------------------------
+    __textarea: &__textarea
+        type: textarea
+    # -- (9) Repeater ----------------------------------------------------------
+    # -- (10) Templateselect ---------------------------------------------------
+    # -- (11) Block ------------------------------------------------------------
+    # -- (12) Integer ----------------------------------------------------------
+    # -- (13) Float ------------------------------------------------------------
+    # -- (14) Hidden -----------------------------------------------------------
+    # -- (15) Checkbox ---------------------------------------------------------
+    # -- (16) Date -------------------------------------------------------------
+    # -- (17) Datetime ---------------------------------------------------------
+    # -- (18) Imagelist --------------------------------------------------------
+    # -- (19) Filelist ---------------------------------------------------------
+    # -- (20) Geolocation -------------------------------------------------------
+
+
+    # --------------------------------------------------------------------------
+    # Full field definitions with fieldnames. When a fieldname is to be re-used,
+    # keep it consistent over all contenttypes.
+    # --------------------------------------------------------------------------
+    title: &title
+        title:
+            <<: *__text--l
+    body: &body
+        body:
+            <<: *__html
+    image: &image
+        image:
+            <<: *__image
+            postfix: 'KEK!'
+    image2: &image2
+        image2: *__image # can't override anymore, but is useful if you want to define a bunch of fields
+
+settings:
+    name: Settings
+    singular_name: Settings
+    slug: settings
+    singular_slug: settings
+    viewless: true
+    singleton: true
+    default_status: published
+    icon_many: "fa:cog"
+    icon_one: "fa:cog"
+    fields:
+        <<: *title
+        <<: *body
+        text-1: *__text--l
+        text-2: *__text--m
+        text-3: *__text--s
+        text-4: *__text--l-inline
+        text-5: *__text--m-inline
+        text-6: *__text--s-inline
+        <<: *image
+        <<: *image2
+
+
+homepage:
+    name: Homepage
+    singular_name: Homepage
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+            postfix: |
+                The 'Homepage' can contain basic information about the website. This title will be
+                shown on the homepage of the website, as the name implies. To change the
+                <em><strong>name</strong></em> of the site, as is shown in the header, and the tab
+                in the webbrowser, edit <code>sitename:</code> in the configuration file.
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1920x640/?cityscape,landscape,nature/__random__
+        teaser:
+            type: html
+            height: 150px
+        content:
+            type: html
+            height: 300px
+        contentlink:
+            type: text
+            label: Link
+            placeholder: 'contenttype/slug or http://example.org/'
+            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contenttype/slug combination. Otherwise use a proper URL, like `http://example.org`."
+        slug:
+            type: slug
+            uses: title
+            group: meta
+    viewless: true
+    singleton: true
+    default_status: published
+    icon_many: "fa:home"
+    icon_one: "fa:home"
+
+
+pages:
+    name: Pages
+    singular_name: Page
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+
+
+entries:
+    name: Entries
+    singular_name: Entry
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+            placeholder: https://source.unsplash.com/1280x768/?business,workspace,interior/__random__
+        video:
+            type: video
+    relations:
+        pages:
+          multiple: false
+          order: title
+          label: Select a page
+    taxonomy: [ categories, tags ]
+    record_template: entry.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+
+showcases:
+    name: Showcases
+    slug: showcases
+    singular_name: Showcase
+    singular_slug: showcase
+    fields:
+        title:
+            type: text
+            class: large
+            required: true
+            pattern: ".{2,255}" # see: http://html5pattern.com/
+            error: "The Title field is required, and must contain at least 2 characters"
+            group: Text
+        slug:
+            type: slug
+            uses: [ title ]
+        html:
+            type: html
+            height: 150px
+        textarea:
+            type: textarea
+            postfix: "<p><em>This is a plain text area. the contents will not be processed.</em></p>"
+        markdown:
+            type: markdown
+            postfix: "<p><em>This field gets parsed as <a href='https://help.github.com/articles/markdown-basics'>Markdown</a>, when rendered on the site.</em></p>"
+        geolocation:
+            type: geolocation
+            group: Media
+        embed:
+            type: embed
+        video:
+            type: video
+        image:
+            type: image
+            attrib: title # Note: retrieve this in your template with {{ record.values.image.title }}
+            extensions: [ gif, jpg, png ]
+            placeholder: https://source.unsplash.com/1280x768/?animal,koala,kitten,puppy,cute/__random__
+        imagelist:
+            type: imagelist
+        file:
+            type: file
+            group: files
+        filelist:
+            type: filelist
+        checkbox:
+            type: checkbox
+            label: "This is a checkbox"
+            group: other
+        datetime:
+            type: datetime
+            default: "2000-01-01"
+            variant: inline
+        date:
+            type: date
+            default: "first day of last month"
+            variant: inline
+        integerfield:
+            type: integer
+            index: true
+        floatfield:
+            type: float
+        selectfield:
+            type: select
+            values: [ foo, bar, baz ]
+        multiselect:
+            type: select
+            values: [ A-tuin, Donatello, Rafael, Leonardo, Michelangelo, Koopa, Squirtle ]
+            multiple: true
+            postfix: "Select your favourite turtle(s)."
+        selectentry:
+            type: select
+            values: entries/id,title
+            postfix: "Select an entry"
+            autocomplete: true
+            sort: title
+        repeater:
+            type: repeater
+            group: repeater
+            limit: 3
+            prefix: "<p>This allows you to create multiple sets of fields. Use the add button at the bottom to create a new empty set.</p>"
+            fields:
+                repeattitle:
+                    type: text
+                repeatimage:
+                    type: image
+                    extensions: [ gif, jpg, png ]
+                repeatcontent:
+                    type: html
+    relations:
+        entries:
+            multiple: false
+            label: "Choose an entry"
+            order: -id
+            format: "{{ item.title|escape }} (№ {{ item.id }})"
+            postfix: "By selecting an Entry, you're creating a bi-directional relationship to that Entry."
+        pages:
+            multiple: true
+            order: title
+            label: Select zero or more pages
+    taxonomy: [ categories, tags ]
+    show_on_dashboard: true
+    default_status: published
+    searchable: true
+    icon_many: "fa:gift"
+    icon_one: "fa:gift"
+
+
+blocks:
+    name: Blocks
+    singular_name: Block
+    fields:
+        title:
+            type: text
+            class: large
+            group: "Block"
+        slug:
+            type: slug
+            uses: [ title ]
+        content:
+            type: html
+            height: 150px
+        contentlink:
+            type: text
+            label: Link
+            placeholder: 'contenttype/slug or http://example.org/'
+            postfix: "Use this to add a link for this Block. This could either be an 'internal' link like <tt>page/about</tt>, if you use a contenttype/slug combination. Otherwise use a proper URL, like `http://example.org`."
+        image:
+            type: image
+            attrib: title
+            extensions: [ gif, jpg, png ]
+    show_on_dashboard: true
+    viewless: true
+    default_status: published
+    searchable: false
+    icon_many: "fa:cubes"
+    icon_one: "fa:cube"
+
+# Possible field types:
+#
+# text - varchar(256) - input type text.
+# integer - integer - Input field for integer numbers.
+# float - double - Input field for floating numbers, stored as 'Double'.
+# geolocation - text (65kb) - Input field for geolocation. Enter an address, and the location is geocoded to latitude/longitude coordinates
+# imagelist - text (65kb) - Input type for imagelists. Add multiple images with a description. Useful for image sliders, galleries, etcetera.
+# image - varchar(256) - image select/upload widget, stored as filename.
+# file - varchar(256) - file select/upload widget, stored as filename.
+# filelist - text (65kb) - Input type for a list of files. Including a description.
+# video - varchar(256) - Video embed widget, stored as filename.
+# html - text (65kb) - wysiwyg element.
+# textarea - varchar(32768) - Simple, plain < textarea > field.
+# markdown - varchar(32768) - Simple, plain < textarea > field, which is parsed as Markdown text.
+# datetime - datetime - date and time selector widget.
+# date - datetime - date selector widget.
+# select - varchar(256) - select with predefined values
+# templateselect - varchar(256) - select with template filenames
+# checkbox - integer - checkbox-field which is 1 (checked) or 0 (unchecked)

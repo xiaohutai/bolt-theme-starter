@@ -1,0 +1,13 @@
+# https://docs.bolt.cm/configuration/routing
+
+# When using the `xiaohutai/hierarchical-routes` extension, you generally do not
+# need overrides. The `pagebinding` routing can be used as a fallback for when
+# `hierarchical-routes` cannot generate a useful link. Uncomment the
+# `pagebinding` block in `routing.yml` to enable it.
+
+pagebinding:
+    path: /{slug}
+    defaults:
+        _controller: controller.frontend:record
+        contenttypeslug: page
+    contenttype: pages

@@ -44,6 +44,7 @@ npm run build
 
 ### Configuration
 
+
 #### Babel
 
 ```
@@ -192,6 +193,7 @@ composer require bolt/disqus
 composer require bolt/jsonapi
 composer require bolt/labels
 ```
+
 
 ### Bolt Configuration
 

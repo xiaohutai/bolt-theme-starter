@@ -1,17 +1,17 @@
+{%- setcontent settings = 'settings/1' -%}
 <!doctype html>
 <html lang="{{ htmllang() }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-        {# --- Add SEO tags ---
         <title>
             {%- block title %}
             {{ seo.title() }}
             {% endblock title -%}
         </title>
         {{ seo.metatags() }}
-        #}
+        {#---
         <title>
             {% block title %}
                 {%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
@@ -19,6 +19,7 @@
                 {% if record.title is not defined and config.get('general/payoff') %} | {{ config.get('general/payoff') }}{% endif -%}
             {% endblock title %}
         </title>
+        ---#}
         {# --- Add meta tags ---
         <meta name="description" content="{{ record.}}">
         #}
@@ -39,7 +40,6 @@
         {% endblock styles %}
     </head>
     <body>
-
         <a href="#content" class="visually-hidden focusable skip-link">Skip to main content</a>
 
         {% block header %}
