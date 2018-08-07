@@ -11,9 +11,9 @@
     "require": {
         "bacboslab/menueditor": "^3.2",
         "bobdenotter/seo": "^1.1",
-        "bolt/basewidget": "^1.0",
         "bolt/bolt": "^3.5",
         "bolt/boltforms": "^4.2",
+        "bolt/sitemap": "^2.5",
         "twokings/bolt-searchable-content-extension": "^1.1",
         "twokings/hierarchical-routes": "^0.2.3"
     },
@@ -34,8 +34,10 @@
         "bolt-icon": "icon.png"
     },
     "suggest": {
-        "animal/translate": "For multilingual websites",
-        "bolt/labels": "For multilingual websites",
-        "bolt/jsonapi": "Provide an API for progressive web apps"
+        "animal/translate": "For multilingual websites.",
+        "bolt/labels": "For multilingual websites.",
+        "bolt/basewidget": "Provide performant widgets usable on any page",
+        "bolt/disqus": "Provide a comments section for pages",
+        "bolt/jsonapi": "Provides a read-only API for contenttypes."
     }
 }

@@ -41,9 +41,8 @@ npm run build
 | `npm run lint`         | Lint styles                              |               |
 | `npm run eslint`       | Lint scripts                             |               |
 
-## Theme Development
 
-### NPM Configuration Files
+### Configuration
 
 #### Babel
 
@@ -51,11 +50,19 @@ npm run build
 .babelrc
 ```
 
+- [.babelrc](https://babeljs.io/docs/en/babelrc.html)
+- [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env)
+
+
 #### ESLint
 
 ```
 .eslintrc.js
 ```
+
+- [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
+- [List of available ESLint rules](https://eslint.org/docs/rules/)
+
 
 ####  PostCSS
 
@@ -63,11 +70,18 @@ npm run build
 .postcssrc
 ```
 
+- [PostCSS](https://postcss.org/)
+- [PostCSS on Github](https://github.com/postcss/postcss)
+
+
 #### CSSNano
 
 ```
 cssnano.config.js
 ```
+
+- [cssnano.co](https://cssnano.co/)
+- [cssnano on Github](https://github.com/cssnano/cssnano)
 
 
 ####  Browserlist
@@ -76,7 +90,8 @@ cssnano.config.js
 .browserslistrc
 ```
 
-- [https://www.npmjs.com/package/browserslist](https://www.npmjs.com/package/browserslist)
+- [browserslist on NPM](https://www.npmjs.com/package/browserslist)
+- [browserslist on Github](https://github.com/browserslist/browserslist)
 - Check the browserslist with `npx browserslist` or online with [browserl.ist](http://browserl.ist/)
 
 
@@ -84,9 +99,8 @@ cssnano.config.js
 
 [Optional]
 
-- Modify `.modernizr.json` accordingly and run `npm run modernizr` once.
-- Add `class="no-js"` to `<html>` tag in `templates/layouts/master.twig`
-
+- (1) Modify `.modernizr.json` accordingly and run `npm run modernizr` once.
+- (2) Add `class="no-js"` to `<html>` tag in `templates/layouts/master.twig`
 - [Modernizr: the feature detection library for HTML5/CSS3](https://modernizr.com/)
 - [Modernizr on Github](https://github.com/Modernizr/Modernizr).
 
@@ -120,6 +134,7 @@ cssnano.config.js
 ├── .editorconfig
 ├── .eslintrc.js
 ├── .gitignore
+├── .modernizr.json
 ├── .postcssrc
 ├── browserconfig.yml
 ├── CHANGELOG.md
@@ -144,8 +159,8 @@ By default, this extension automatically installs the following extensions:
 
 - `bacboslab/menueditor`
 - `bobdenotter/seo`
-- `bolt/basewidget`
 - `bolt/boltforms`
+- `bolt/sitemap`
 - `twokings/bolt-searchable-content-extension`
 - `twokings/hierarchical-routes`
 
@@ -155,29 +170,30 @@ them separately in order to keep them:
 ```sh
 composer require bacboslab/menueditor
 composer require bobdenotter/seo
-composer require bolt/basewidget
 composer require bolt/boltforms
+composer require bolt/sitemap
 composer require twokings/bolt-searchable-content-extension
 composer require twokings/hierarchical-routes
 ```
 
+
 #### Commonly Used Extensions
 
 - `animal/translate`
+- `bolt/basewidget`
 - `bolt/disqus`
 - `bolt/jsonapi`
 - `bolt/labels`
-- `bolt/sitemap`
 
 ```sh
 composer require animal/translate
+composer require bolt/basewidget
 composer require bolt/disqus
 composer require bolt/jsonapi
 composer require bolt/labels
-composer require bolt/sitemap
 ```
 
-### Configuration
+### Bolt Configuration
 
 `[Optional]`
 
