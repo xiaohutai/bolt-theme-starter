@@ -59,20 +59,11 @@ npm run build
 | [PostCSS](https://postcss.org/)                             | `.postcssrc`        | [:octocat:](https://github.com/postcss/postcss) | |
 | [cssnano](https://cssnano.co/)                              | `cssnano.config.js` | [:octocat:](https://github.com/cssnano/cssnano) | |
 | [Browserlist](https://github.com/browserslist/browserslist) | `.browserslistrc`   | [:octocat:](https://github.com/browserslist/browserslist) | [browserl.ist](http://browserl.ist/) |
-| [Modernizr](https://modernizr.com/)                         | `.modernizr.json`   | [:octocat:](https://github.com/Modernizr/Modernizr) | |
 
 Check the browserslist with
 ```
 npx browserslist
 ```
-
-For Modernizer:
-
-1. Modify `.modernizr.json` accordingly
-2. run `npm run modernizr` once.
-3. run `npm run build` once.
-4. Add `class="no-js"` to the `<html>` element in `templates/layouts/master.twig`
-5. Add `<script src="{{ asset('dist/scripts/lib/modernizr.js', 'theme') }}"></script>` in `templates/layouts/master.twig`
 
 
 ## Folder Structure
@@ -106,7 +97,6 @@ For Modernizer:
 ├── .editorconfig
 ├── .eslintrc.js
 ├── .gitignore
-├── .modernizr.json
 ├── .postcssrc
 ├── browserconfig.yml
 ├── CHANGELOG.md
